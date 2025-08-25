@@ -72,6 +72,19 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+        .scroll-arrow {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: pulse 2s infinite;
+            transition: opacity 0.5s;
+        }
+        @keyframes pulse {
+            0% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1); }
+            100% { transform: translateX(-50%) scale(1); }
+        }
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
@@ -120,6 +133,9 @@
                 <a href="portfolio.html" class="glow-button bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">
                     Explore My Work
                 </a>
+            </div>
+            <div id="scroll-arrow" class="scroll-arrow">
+                <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </div>
         </section>
 
@@ -207,6 +223,16 @@
             }
         }
         document.addEventListener('DOMContentLoaded', typeWriter);
+
+        // Scroll arrow animation
+        const scrollArrow = document.getElementById('scroll-arrow');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollArrow.style.opacity = '0';
+            } else {
+                scrollArrow.style.opacity = '1';
+            }
+        });
 
         // Animation on scroll
         const sections = document.querySelectorAll('.fade-in-section');
