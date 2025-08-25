@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perth Web Studios - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-display {
+            font-family: 'Lora', serif;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #0d9488; /* Teal-600 */
+        }
+        /* Underline animation for nav links */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #0d9488; /* Teal-600 */
+            transform-origin: center;
+            transition: transform 0.3s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+        .hero-bg {
+            background-color: #f8fafc;
+            background-image:
+                linear-gradient(rgba(13, 148, 136, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(13, 148, 136, 0.05) 1px, transparent 1px);
+            background-size: 2rem 2rem;
+        }
+        /* Animation Styles */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-display font-bold text-gray-800 tracking-tight">Perth Web Studios</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="about.html" class="nav-link text-gray-600 font-medium">About</a>
+                <a href="portfolio.html" class="nav-link text-gray-600 font-medium">Portfolio</a>
+                <a href="contact.html" class="nav-link text-gray-600 font-medium">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                 <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="about.html" class="block py-2 text-gray-600">About</a>
+            <a href="portfolio.html" class="block py-2 text-gray-600">Portfolio</a>
+            <a href="contact.html" class="block py-2 text-gray-600">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-center py-24 md:py-40 px-6">
+            <div class="relative z-10">
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-4 text-gray-800 leading-tight">
+                    Give Your Local Business the <span class="text-teal-600">Website it Deserves.</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-600 mb-8">
+                    I build beautiful, modern, and affordable websites for Perth's best cafes, shops, and small businesses.
+                </p>
+                <a href="portfolio.html" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">View My Work</a>
+            </div>
+        </section>
+
+        <!-- Why Work With Me? Section -->
+        <section id="why-me" class="py-20 bg-white fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-display font-bold text-gray-800 mb-12">Why Work With Me?</h2>
+                <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                    <div class="text-center">
+                        <div class="bg-teal-100 text-teal-600 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Local & Personal</h3>
+                        <p class="text-gray-600">Based right here in Morley, I offer a friendly, face-to-face service you can trust.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-teal-100 text-teal-600 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1m0-1V4m0 2.01V5M12 20v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m0-1v-1m-4.401-3.599A2.001 2.001 0 006 12c0 1.105.895 2 2 2s2-.895 2-2c0-1.105-.895-2-2-2zm8.802 0A2.001 2.001 0 0014 12c0 1.105.895 2 2 2s2-.895 2-2c0-1.105-.895-2-2-2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Affordable & Transparent</h3>
+                        <p class="text-gray-600">No hidden fees. I offer a free preview and clear pricing so you know exactly what to expect.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-teal-100 text-teal-600 rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Modern & Mobile-Ready</h3>
+                        <p class="text-gray-600">Every website I build is designed to look perfect on phones, tablets, and desktops.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Work CTA -->
+        <section class="py-20 bg-slate-50 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                <div class="bg-white rounded-lg shadow-lg p-10 max-w-4xl mx-auto">
+                    <h2 class="text-4xl font-display font-bold text-gray-800 mb-4">See My Work in Action</h2>
+                    <p class="max-w-xl mx-auto text-gray-600 mb-8">Take a look at the custom websites I've built for other local businesses.</p>
+                    <a href="portfolio.html" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-flex items-center justify-center">
+                        View Portfolio
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2024 Perth Web Studios. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animation on scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>

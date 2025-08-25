@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Example Retail - Perth Web Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-display {
+            font-family: 'Lora', serif;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #0d9488; /* Teal-600 */
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #0d9488; /* Teal-600 */
+            transform-origin: center;
+            transition: transform 0.3s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+        .page-header-bg {
+            background-color: #f8fafc;
+            background-image:
+                linear-gradient(rgba(13, 148, 136, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(13, 148, 136, 0.05) 1px, transparent 1px);
+            background-size: 2rem 2rem;
+        }
+        /* Animation Styles */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-700">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-display font-bold text-gray-800 tracking-tight">Perth Web Studios</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="about.html" class="nav-link text-gray-600 font-medium">About</a>
+                <a href="portfolio.html" class="nav-link text-gray-600 font-medium">Portfolio</a>
+                <a href="contact.html" class="nav-link text-gray-600 font-medium">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden flex items-center">
+                 <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="about.html" class="block py-2 text-gray-600">About</a>
+            <a href="portfolio.html" class="block py-2 text-gray-600">Portfolio</a>
+            <a href="contact.html" class="block py-2 text-gray-600">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header-bg text-center py-20 md:py-28 px-6">
+            <div class="relative z-10">
+                <h1 class="text-5xl md:text-6xl font-display font-bold text-gray-800">Example Retail Website</h1>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-600 mt-4">
+                    A stylish and clean concept for a local retail business.
+                </p>
+            </div>
+        </section>
+
+        <!-- Case Study Content -->
+        <section class="py-20 bg-white fade-in-section">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-3 gap-12">
+                    <!-- Left Column: Details -->
+                    <div class="lg:col-span-1 text-gray-600">
+                        <h2 class="text-2xl font-display font-bold text-gray-800 mb-4">Project Goal</h2>
+                        <p class="mb-8">The objective was to design an elegant website that highlights the quality of the products and provides a simple, enjoyable shopping experience for customers.</p>
+                        
+                        <h2 class="text-2xl font-display font-bold text-gray-800 mb-4">My Process</h2>
+                        <p class="mb-8">I used a minimalist layout to let the product photography shine. The design focuses on a clean grid, high-quality images, and a straightforward navigation path to the online store.</p>
+
+                        <h2 class="text-2xl font-display font-bold text-gray-800 mb-4">Key Features</h2>
+                        <ul class="list-disc list-inside space-y-2 mb-8">
+                            <li>Clean, Minimalist Design</li>
+                            <li>Product Showcase Gallery</li>
+                            <li>Mobile-Optimized Layout</li>
+                            <li>Clear Calls-to-Action</li>
+                        </ul>
+
+                        <a href="#" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">
+                            View Live Demo (Coming Soon)
+                        </a>
+                    </div>
+
+                    <!-- Right Column: Images -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Desktop View</h3>
+                            <img src="https://placehold.co/1200x800/d1c7bd/8f6e4f?text=Desktop+View" alt="Desktop view of the retail website" class="rounded-lg shadow-lg">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-4">Mobile & Tablet View</h3>
+                             <div class="grid grid-cols-2 gap-8">
+                                <img src="https://placehold.co/400x600/d1c7bd/8f6e4f?text=Mobile+View" alt="Mobile view of the retail website" class="rounded-lg shadow-lg">
+                                <img src="https://placehold.co/600x800/d1c7bd/8f6e4f?text=Tablet+View" alt="Tablet view of the retail website" class="rounded-lg shadow-lg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Project CTA -->
+        <section class="py-20 bg-slate-50 fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                 <a href="portfolio.html" class="text-teal-600 font-semibold hover:underline">← Back to Portfolio</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2024 Perth Web Studios. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animation on scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
